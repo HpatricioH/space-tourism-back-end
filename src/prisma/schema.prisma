@@ -28,9 +28,9 @@ model destinations {
 }
 
 model technology {
-  id           Int    @id @default(autoincrement())
-  name         String @db.VarChar(255)
-  imgportrait  String @db.VarChar(255)
-  imglandscape String @db.VarChar(255)
-  description  String @db.VarChar(255)
+  id           Int     @id @default(autoincrement())
+  name         String  @db.VarChar(255)
+  imgportrait  String? @db.VarChar(255)
+  imglandscape String? @db.VarChar(255)
+  description  String? @db.LongText
 }

@@ -1,25 +1,25 @@
-const { crew } = require('./DB Data/crew.js');
+const { crews } = require('./DB Data/crews.js');
+const { destinations } = require('./DB Data/destination.js');
+const { technologies } = require('./DB Data/technologies.js');
 const { PrismaClient } = require('@prisma/client');
-const { destinations } = require('./DB Data/destinations.js');
-const { technology } = require('./DB Data/technology.js');
 const prisma = new PrismaClient();
 
 async function main() {
-  for (let crewMembers of crew) {
+  for (let crew of crews) {
     await prisma.crew.create({
-      data: crewMembers,
+      data: crew,
     });
   }
 
-  for (let destinationDetails of destinations) {
-    await prisma.destinations.crate({
-      data: destinationDetails,
+  for (let destinationInfo of destinations) {
+    await prisma.destinations.create({
+      data: destinationInfo,
     });
   }
 
-  for (let technologyInfo of technology) {
+  for (let technology of technologies) {
     await prisma.technology.create({
-      data: technologyInfo,
+      data: technology,
     });
   }
 }

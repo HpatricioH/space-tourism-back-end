@@ -1,4 +1,4 @@
-const technology = [
+const technologies = [
   {
     id: 1,
     name: 'Launch vehicle',
@@ -25,4 +25,4 @@ const technology = [
   },
 ];
 
-module.exports(technology);
+module.exports = { technologies };
