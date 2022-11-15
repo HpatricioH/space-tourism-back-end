@@ -2,15 +2,22 @@
   "name": "space-turism-server",
   "version": "1.0.0",
   "description": "Practice project ",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Patricio Huerta",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^4.6.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "prisma": "^4.6.1"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
   }
 }
