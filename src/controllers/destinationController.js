@@ -1,13 +1,9 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-const getSingleDestination = async (req, res) => {
+const getAllDestinations = async (req, res) => {
   try {
-    const id = parseInt(req.params.id);
-
-    const getOneDestination = await prisma.destinations.findMany({
-      where: { id: id },
-    });
+    const getOneDestination = await prisma.destinations.findMany();
     res.status(200).json(getOneDestination);
   } catch (error) {
     console.log(error);
@@ -16,5 +12,5 @@ const getSingleDestination = async (req, res) => {
 };
 
 module.exports = {
-  getSingleDestination,
+  getAllDestinations,
 };
