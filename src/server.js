@@ -12,6 +12,7 @@ const crewRoutes = require('./v1/routes/crewRoutes');
 const destinationRoutes = require('./v1/routes/destinationRoutes');
 const technologyRoutes = require('./v1/routes/technologyRoute');
 // Middleware
+app.use(express.static('public'));
 app.use(cors());
 
 // Routes
