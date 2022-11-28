@@ -3,7 +3,10 @@ const prisma = new PrismaClient();
 
 const getAllDestinations = async (req, res) => {
   try {
-    const getOneDestination = await prisma.destinations.findMany();
+    const id = parseInt(req.params.id);
+    const getOneDestination = await prisma.destinations.findMany({
+      where: { id: id },
+    });
     res.status(200).json(getOneDestination);
   } catch (error) {
     console.log(error);
