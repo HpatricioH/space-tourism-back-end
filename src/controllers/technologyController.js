@@ -1,9 +1,12 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-const getAllTechnology = async (req, res) => {
+const getOneTechnology = async (req, res) => {
   try {
-    const getOneTechnology = await prisma.technology.findMany();
+    const id = parseInt(req.params.id);
+    const getOneTechnology = await prisma.technology.findMany({
+      where: {id: id},
+    });
     res.status(200).json(getOneTechnology);
   } catch (error) {
     console.log(error);
@@ -11,4 +14,4 @@ const getAllTechnology = async (req, res) => {
   }
 };
 
-module.exports = { getAllTechnology };
+module.exports = { getOneTechnology };
