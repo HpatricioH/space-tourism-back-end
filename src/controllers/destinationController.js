@@ -1,7 +1,7 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-const getAllDestinations = async (req, res) => {
+const getOneDestinations = async (req, res) => {
   try {
     const id = parseInt(req.params.id);
     const getOneDestination = await prisma.destinations.findMany({
@@ -15,5 +15,5 @@ const getAllDestinations = async (req, res) => {
 };
 
 module.exports = {
-  getAllDestinations,
+  getOneDestinations,
 };
